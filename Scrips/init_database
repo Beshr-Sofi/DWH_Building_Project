@@ -1,0 +1,26 @@
+/* 
+===============================================================
+   Script Name   : Data Warehouse Schema Initialization
+   Description   : 
+       This script creates a database for the Data Warehouse 
+       and initializes the three schema layers:
+         - bronze : raw data (staging layer)
+         - silver : cleansed and transformed data (processing layer)
+         - gold   : curated data for analytics and reporting
+===============================================================
+*/
+
+-- Create the DataWareHouse database if it does not already exist
+CREATE DATABASE IF NOT EXISTS DataWareHouse;
+
+-- Switch to using the DataWareHouse database
+USE DataWareHouse;
+
+-- Create schema for raw (ingested) data
+CREATE SCHEMA IF NOT EXISTS bronze;
+
+-- Create schema for cleaned and transformed data
+CREATE SCHEMA IF NOT EXISTS silver;
+
+-- Create schema for curated and aggregated data
+CREATE SCHEMA IF NOT EXISTS gold;
